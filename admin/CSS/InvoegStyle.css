@@ -32,7 +32,7 @@
 }
 
 .form-div {
-    margin-top: 40px;
+    margin-top: 20px;
     position: relative;
     transform: translate(-50%, 0%);
     top: -10px;
@@ -63,9 +63,14 @@ input[type=text] {
     width: 100%;
     border: 2px black solid;
 }
-input[type=text]:hover, input[type=submit]:hover{
-    border: 1.5px black solid;
+input[type=text]:hover, input[type=submit]:hover, textarea:hover{
+    border: 2px black solid;
     background-color: rgb(233, 233, 233);
+}
+textarea {
+    font-size: large;
+    border: 2px black solid;
+    width: 100%;
 }
 input[type=submit] {
     position: relative;

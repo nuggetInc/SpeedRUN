@@ -22,7 +22,7 @@
                     <label class="Titel">Kleur</label>
                     <input class="input" placeholder="Schoen Kleur" type="text" name="kleur" required>
                     <label class="Titel">Beschrijving</label>
-                    <input class="input" placeholder="Schoen Beschrijving" type="text" name="beschrijving" required>
+                    <textarea class="input" placeholder="Schoen Beschrijving" name="beschrijving"></textarea>
                     <label class="Titel">Foto</label>
                     <input class="input" placeholder="Foto Url" type="text" name="foto" required>
                     <input type="submit">
