@@ -7,6 +7,7 @@ require("artikelen/KledingStuk.php");
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/item.css">
     <title>Document</title>
 </head>
@@ -14,7 +15,7 @@ require("artikelen/KledingStuk.php");
 <body>
     <?php
     $schoenen = Database::getSchoenen(0, 2);
-
+    
     foreach ($schoenen as $schoen) {
         echo $schoen->getRender();
     }
