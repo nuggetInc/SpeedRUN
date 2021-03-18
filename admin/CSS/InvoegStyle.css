@@ -70,7 +70,8 @@ input[type=text]:hover, input[type=submit]:hover, textarea:hover{
 textarea {
     font-size: large;
     border: 2px black solid;
-    width: 100%;
+    max-height: 95px;
+    max-width: 100%;
 }
 input[type=submit] {
     position: relative;
