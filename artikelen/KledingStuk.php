@@ -1,18 +1,18 @@
 <?php
 class KledingStuk extends Artikel
 {
-    private array $possibleSizes;
-    private array $aviableSizes;
+    private $possibleSizes;
+    private $aviableSizes;
 
-    public function setPossibleSizes(array $possibleSizes) {
+    public function setPossibleSizes($possibleSizes) {
         $this->possibleSizes = $possibleSizes;
     }
 
-    public function setAviableSizes(array $aviableSizes) {
+    public function setAviableSizes($aviableSizes) {
         $this->aviableSizes = $aviableSizes;
     }
 
-    public function getRender(): string {
+    public function getRender() {
         $str = "<div class='item' style='margin-bottom:2rem;'>";
         $str.= "<div class='preview-wrapper'>";
         $str.= "<img class='preview' src='{$this->previewUrl}' alt='voorbeeld'>";

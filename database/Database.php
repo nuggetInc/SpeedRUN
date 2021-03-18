@@ -8,16 +8,15 @@ class Database
      * Holds the pdo object.
      * @param \PDO $pdo The PDO object this connection will work on.
      */
-    public static function setPDO(PDO $pdo): void
-    {
+    public static function setPDO($pdo) {
         Database::$pdo = $pdo;
     }
 
-    public static function getPDO(): PDO {
+    public static function getPDO() {
         return Database::$pdo;
     }
 
-    public static function getSchoenen(int $offset, int $limit): array {
+    public static function getSchoenen($offset, $limit) {
         $sth = Database::$pdo->prepare(
             "SELECT id, naam, prijs, beschrijving, foto,
             GROUP_CONCAT(maat), GROUP_CONCAT(beschikbaar)

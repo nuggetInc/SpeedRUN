@@ -1,33 +1,33 @@
 <?php
 class Artikel
 {
-    protected int $id;
-    protected string $name;
-    protected float $price;
-    protected string $description;
-    protected string $previewUrl;
+    protected $id;
+    protected $name;
+    protected $price;
+    protected $description;
+    protected $previewUrl;
 
-    public function __construct(int $id) {
+    public function __construct($id) {
         $this->id = $id;
     }
 
-    public function setName(string $name) {
+    public function setName($name) {
         $this->name = $name;
     }
 
-    public function setPrice(int $price) {
+    public function setPrice($price) {
         $this->price = $price;
     }
 
-    public function setDescription(string $description) {
+    public function setDescription($description) {
         $this->description = $description;
     }
 
-    public function setPreviewUrl(string $previewUrl) {
+    public function setPreviewUrl($previewUrl) {
         $this->previewUrl = $previewUrl;
     }
 
-    public function getRender(): string {
+    public function getRender() {
         $str = "<div style='margin-bottom:2rem;'>";
         $str.= "<p>{$this->name} : €{$this->price}</p>";
         $str.= "<p>{$this->description}</p>";
