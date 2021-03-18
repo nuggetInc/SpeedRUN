@@ -17,17 +17,28 @@ class Database
         return Database::$pdo;
     }
 
-    public static function getArtikelen(int $offset, int $limit): array {
-        $parameters = array(":offset"=>$offset, ":limit"=>$limit);
-        $sth = Database::pdo->prepare("SELECT artikel.id, artikel.naam, artikel.beschrijving FROM artikel GROUP BY leerlingen.delen_tot LIMIT :offset, :limit");
+    public static function getSchoenen(int $offset, int $limit): array {
+        $sth = Database::$pdo->prepare(
+            "SELECT id, naam, prijs, beschrijving, foto,
+            GROUP_CONCAT(maat), GROUP_CONCAT(beschikbaar)
+            FROM schoenenpaar GROUP BY schoenenpaar.naam LIMIT {$offset}, {$limit}");
+        $sth->execute();
 
-        //SELECT leerlingen.delen_tot, GROUP_CONCAT(leerlingen.naam) FROM `leerlingen` GROUP BY leerlingen.delen_tot LIMIT 2 
-    }
+        $schoenen = array();
 
-    public static function getKledingStukken(int $offset, int $limit): array {
-        $parameters = array(":offset"=>$offset, ":limit"=>$limit);
-        $sth = Database::pdo->prepare("SELECT kledingStuk.id, kledingStuk.naam, kledingStuk.beschrijving, GROUP_CONCAT(kledingStuk.possibleSizes), GROUP_CONCAT(kledingStuk.aviableSizes) FROM kledingStuk GROUP BY kledingStuk.id LIMIT :offset, :limit");
-        // this still has to be adapted to the database and such
+        while($row = $sth->fetch()) {
+            $schoen = new KledingStuk($row["id"]);
+            $schoen->setName($row["naam"]);
+            $schoen->setPrice($row["prijs"]);
+            $schoen->setDescription($row["beschrijving"]);
+            $schoen->setPreviewUrl($row["foto"]);
+            $schoen->setPossibleSizes(array_map('intval', explode(",", $row["GROUP_CONCAT(maat)"])));
+            $schoen->setAviableSizes(array_map('intval', explode(",", $row["GROUP_CONCAT(beschikbaar)"])));
+
+            array_push($schoenen, $schoen);
+        }
+
+        return $schoenen;
     }
 }
 
