@@ -24,6 +24,7 @@
     justify-content: space-between;
 }
 
-.item > .info-wrapper > h1 {
-    overflow-wrap: none;
+.item > .info-wrapper > h2 {
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
 }
