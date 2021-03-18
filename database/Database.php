@@ -2,7 +2,7 @@
 //$pdo = new PDO("mysql:host=localhost;dbname=[database name]", "root", "");
 class Database
 {
-    private static PDO $pdo;
+    private static $pdo;
 
     /**
      * Holds the pdo object.
