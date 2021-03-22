@@ -36,7 +36,7 @@ class Database
 
             array_push($schoenen, $schoen);
         }
-
+        
         return $schoenen;
     }
 }
