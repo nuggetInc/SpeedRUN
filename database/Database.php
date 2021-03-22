@@ -39,6 +39,29 @@ class Database
 
         return $schoenen;
     }
+
+    public static function getSchoenenWaarNaam($naam) {
+        $parameters = array(":naam"=>$naam);
+        $sth = Database::$pdo->prepare(
+            "SELECT id, naam, prijs, beschrijving, foto,
+            GROUP_CONCAT(maat), GROUP_CONCAT(beschikbaar)
+            FROM schoenenpaar WHERE naam = :naam GROUP BY schoenenpaar.naam");
+        $sth->execute($parameters);
+
+        if ($row = $sth->fetch()) {
+            $schoen = new KledingStuk($row["id"]);
+            $schoen->setName($row["naam"]);
+            $schoen->setPrice($row["prijs"]);
+            $schoen->setDescription($row["beschrijving"]);
+            $schoen->setPreviewUrl($row["foto"]);
+            $schoen->setPossibleSizes(array_map('intval', explode(",", $row["GROUP_CONCAT(maat)"])));
+            $schoen->setAviableSizes(array_map('intval', explode(",", $row["GROUP_CONCAT(beschikbaar)"])));
+
+            return $schoen;
+        }
+
+        return null;
+    }
 }
 
 Database::setPDO(new PDO("mysql:host=localhost;dbname=SpeedRUN", "root", ""));
