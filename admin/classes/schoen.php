@@ -1,13 +1,13 @@
 <?php 
 class Schoen 
 {
-    public $titel; 
-    public $prijs;
-    public $maat;
-    public $kleur;
-    public $beschrijving;
-    public $foto;
-    public $pdo;
+    protected $titel; 
+    protected $prijs;
+    protected $maat;
+    protected $kleur;
+    protected $beschrijving;
+    protected $foto;
+    protected $pdo;
     
 
     function __construct()
@@ -43,7 +43,7 @@ class Schoen
     {
         $parameters = array(':titel'=>$this->titel, ':prijs'=>$this->prijs, ':maat'=>$this->maat, ':kleur'=>$this->kleur,
         ':beschrijving'=>$this->beschrijving, ':foto'=>$this->foto);
-        $sth = $this->pdo->prepare("INSERT INTO shoenenpaar (naam, prijs, maat, kleur_id, beschrijving, foto) VALUES (:titel, :prijs, :maat, :kleur, :beschrijving, :foto)");
+        $sth = $this->pdo->prepare("INSERT INTO schoenenpaar (naam, prijs, maat, beschikbaar, kleur_id, beschrijving, foto) VALUES (:titel, :prijs, :maat, 1, :kleur, :beschrijving, :foto)");
         $sth->execute($parameters);
     }
 

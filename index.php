@@ -14,8 +14,8 @@ require("artikelen/KledingStuk.php");
 
 <body>
     <?php
-    $schoenen = Database::getSchoenen(0, 2);
-    
+    $schoenen = Database::getSchoenen(0, 5);
+
     foreach ($schoenen as $schoen) {
         echo $schoen->getRender();
     }
