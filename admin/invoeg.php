@@ -34,8 +34,6 @@
                     <input class="titel-input" type="text" name="titel" required>
                     <label class="Titel">Prijs</label>
                     <input class="titel-input" type="text" name="prijs" required>
-                    <label class="Titel"></label>
-                    <input class="titel-input" type="text" name="maat" required>
                     <label class="Titel">Kleur</label>
                     <input class="titel-input" type="text" name="kleur" required>
                     <label class="Titel">Beschrijving</label>
