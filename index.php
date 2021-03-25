@@ -10,10 +10,12 @@ require("artikelen/KledingStuk.php");
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/artikelGrid.css">
     <link rel="stylesheet" href="./css/item.css">
+    <link rel="stylesheet" href="./css/header.css">
     <title>Document</title>
 </head>
 
 <body>
+    <?php require("header.php");?>
     <div class="item-wrapper">
         <?php
         $schoenen = Database::getSchoenen(0, 20);
