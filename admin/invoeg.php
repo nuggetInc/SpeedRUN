@@ -32,17 +32,17 @@
         <div class="mid-div"> 
             <p class="schoen-label">Nieuwe accesoire toevoegen</p>
             <div class="form-div">
-                <form action="toevoegen/schoen.php" method="POST">
+                <form action="toevoegen/accesoire.php" method="POST">
                     <label class="Titel">Titel</label>
-                    <input class="titel-input" type="text" name="titel" required>
+                    <input class="titel-input" placeholder="Naam Accesoire" type="text" name="titel" required>
                     <label class="Titel">Prijs</label>
-                    <input class="titel-input" type="text" name="prijs" required>
+                    <input class="titel-input" placeholder="€" type="text" name="prijs" required>
                     <label class="Titel">Kleur</label>
-                    <input class="titel-input" type="text" name="kleur" required>
+                    <input class="titel-input" placeholder="Kleur Accesoire" type="text" name="kleur" required>
                     <label class="Titel">Beschrijving</label>
-                    <input class="titel-input" type="text" name="beschrijving" required>
+                    <input class="titel-input" placeholder="Accesoire Beschrijving" type="text" name="beschrijving" required>
                     <label class="Titel">Foto</label>
-                    <input class="titel-input" type="text" name="foto" required>
+                    <input class="titel-input" placeholder="Foto Url" type="text" name="foto" required>
                     <input type="submit">
                 </form>
             </div>
