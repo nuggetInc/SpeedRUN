@@ -1,0 +1,19 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    align-items: flex-start;
+}
+
+.page-wrapper > img {
+    width: 40vw;
+}
+
+.page-wrapper > .info-wrapper {
+    margin-left: 50px;
+    width: 30vw;
+}
+
+.page-wrapper > .info-wrapper .aviable {
+    color: gray;
+}

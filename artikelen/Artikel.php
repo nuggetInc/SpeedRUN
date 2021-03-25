@@ -27,13 +27,20 @@ class Artikel
         $this->previewUrl = $previewUrl;
     }
 
-    public function getRender() {
-        $str = "<div style='margin-bottom:2rem;'>";
-        $str.= "<p>{$this->name} : €{$this->price}</p>";
-        $str.= "<p>{$this->description}</p>";
-        $str.= "</div>";
+    public function getName() {
+        return $this->name;
+    }
 
-        return $str;
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function getPreviewUrl() {
+        return $this->previewUrl;
     }
 }
 ?>
