@@ -1,0 +1,18 @@
+.item-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 75vw;
+    gap: 40px;
+}
+
+@media (max-width: 75rem) {
+    .item-wrapper {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 50rem) {
+    .item-wrapper {
+        grid-template-columns: auto;
+    }
+}

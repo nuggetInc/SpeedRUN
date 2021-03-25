@@ -13,15 +13,15 @@ class KledingStuk extends Artikel
     }
 
     public function getRender() {
-        $str = "<div class='item' style='margin-bottom:2rem;'>";
+        $str = "<a href='schoenPagina.php?naam={$this->name}' class='item' style='margin-bottom:2rem;'>";
         $str.= "<div class='preview-wrapper'>";
         $str.= "<img class='preview' src='{$this->previewUrl}' alt='voorbeeld'>";
         $str.= "</div>";
-        $str.= "<a href='schoenPagina.php?naam={$this->name}' class='info-wrapper'>";
-        $str.= "<h1><span>{$this->name}</span><span>€{$this->price}</span></h1>";
+        $str.= "<div class='info-wrapper'>";
+        $str.= "<h1><span style='margin-right: 1rem;'>{$this->name}</span><span>€{$this->price}</span></h1>";
         $str.= "<h2>{$this->description}</h2>";
-        $str.= "</a>";
         $str.= "</div>";
+        $str.= "</a>";
 
         return $str;
     }

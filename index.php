@@ -8,18 +8,21 @@ require("artikelen/KledingStuk.php");
 
 <head>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/artikelGrid.css">
     <link rel="stylesheet" href="./css/item.css">
     <title>Document</title>
 </head>
 
 <body>
-    <?php
-    $schoenen = Database::getSchoenen(0, 5);
+    <div class="item-wrapper">
+        <?php
+        $schoenen = Database::getSchoenen(0, 20);
 
-    foreach ($schoenen as $schoen) {
-        echo $schoen->getRender();
-    }
-    ?>
+        foreach ($schoenen as $schoen) {
+            echo $schoen->getRender();
+        }
+        ?>
+    </div>
 </body>
 
 </html>
